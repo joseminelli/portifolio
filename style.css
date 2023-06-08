@@ -237,17 +237,15 @@ h2 {
   background: var(--accent-color);
 }
 
-.polish {
+.portugues {
   width: 100%;
 }
 
 .english {
+  border-radius: 10px;
   width: 75%;
 }
 
-.french {
-  width: 50%;
-}
 
 .skill {
   background-color: var(--accent-color);
