@@ -6,6 +6,25 @@
     animation: slit-in-vertical 0.45s ease-out both;
 }
 
+@keyframes showHideDot {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
 @-webkit-keyframes slit-in-vertical {
     0% {
         -webkit-transform: translateZ(-800px) rotateY(90deg);
@@ -53,10 +72,10 @@
     left: 0px;
     width: 100%;
     z-index: 10;
-  }
+}
 
 #dialogbox {
-    position:fixed;
+    position: fixed;
     top: 40%;
     left: calc(50% - 145px);
     display: none;
@@ -201,6 +220,28 @@
     padding: 20px;
     color: #FFF;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    .dot {
+        display: inline;
+        margin-left: 0.1em;
+        margin-right: 0.1em;
+        position: relative;
+        font-size: 2.5em;
+        opacity: 0;
+        animation: showHideDot 2.5s ease-in-out infinite;
+
+        &.one {
+            animation-delay: 0.2s;
+        }
+
+        &.two {
+            animation-delay: 0.4s;
+        }
+
+        &.three {
+            animation-delay: 0.6s;
+        }
+    }
 }
 
 #alertFooter {
@@ -216,5 +257,5 @@
         left: calc(40% - 100px);
         display: none;
         width: 70%;
-    }   
+    }
 }
