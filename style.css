@@ -12,7 +12,6 @@
   --border-radius: 30px;
 }
 
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -352,7 +351,7 @@ button:hover {
   top: 55px;
   height: calc(100% - 100px);
   background-color: var(--accent-color);
-  z-index: 100;
+  z-index: 9;
 }
 
 .timeline-date {
