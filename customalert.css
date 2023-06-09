@@ -120,7 +120,6 @@
     transition: opacity 0.2s;
 }
 
-/* Ripple */
 .pure-material-button-contained::after {
     content: "";
     position: absolute;

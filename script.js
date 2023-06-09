@@ -32,19 +32,19 @@ function CustomAlert(){
   let customAlert = new CustomAlert();
 
 function mandarEmail() {
-    
+
   var params = {
     nome: document.getElementById("name").value,
     email: document.getElementById("email").value,
     mensagem: document.getElementById("message").value,
   };
   customAlert.alert('Seu email foi enviado','Sucesso!')
-  var overlay = document.getElementById('overlay');
+
 
   const serviceID = "service_mcdvzxc";
   const templateID = "template_ghy15go";
   
-  emailjs
+  /*emailjs
   .send(serviceID, templateID, params)
   .then((res) => {
     document.getElementById("name").value = "";
@@ -52,5 +52,5 @@ function mandarEmail() {
     document.getElementById("message").value = "";
     console.log(res);
     alert("Mensagem enviada");
-  });
+  });*/
 }
