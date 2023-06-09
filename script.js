@@ -93,11 +93,11 @@ function mandarEmail() {
     const serviceID = "service_mcdvzxc";
     const templateID = "template_ghy15go";
 
-    /*emailjs.send(serviceID, templateID, params).then((res) => {
+    emailjs.send(serviceID, templateID, params).then((res) => {
       document.getElementById("name").value = "";
       document.getElementById("email").value = "";
       document.getElementById("message").value = "";
       console.log(res);
-    });*/
+    });
   }
 }
