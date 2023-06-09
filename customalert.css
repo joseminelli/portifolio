@@ -43,6 +43,7 @@
         transform: translateZ(0) rotateY(0);
     }
 }
+
 #overlay {
     display: none;
     position: fixed;

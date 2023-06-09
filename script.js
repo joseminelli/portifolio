@@ -32,6 +32,7 @@ function CustomAlert(){
   let customAlert = new CustomAlert();
 
 function mandarEmail() {
+    
   var params = {
     nome: document.getElementById("name").value,
     email: document.getElementById("email").value,
