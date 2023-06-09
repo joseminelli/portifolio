@@ -78,7 +78,6 @@ function mandarEmail() {
 
   customAlertWait.alert("Estamos enviando seu email", "Aguarde");
   setTimeout(() => {customAlert.alert("Seu email foi enviado", "Sucesso!");},4000);
-  console.log("teste")
   
 
   const serviceID = "service_mcdvzxc";
