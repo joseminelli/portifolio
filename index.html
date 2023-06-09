@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://cdn.discordapp.com/attachments/933499827638124575/1116492126956564521/Joseminelli.png" />
+    <link
+      rel="icon"
+      href="https://cdn.discordapp.com/attachments/933499827638124575/1116492126956564521/Joseminelli.png"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -130,27 +133,35 @@
                   <div class="project-description">
                     <h3>Adote sua patinha</h3>
                     <p>
-                        Repositório local do trabalho de 1° período da PUC, site com propósito de facilitar o encontro de pets com pessoas interessadas em adotar
+                      Repositório local do trabalho de 1° período da PUC, site
+                      com propósito de facilitar o encontro de pets com pessoas
+                      interessadas em adotar
                     </p>
                     <a href="https://joseminelli.github.io/adote-sua-patinha">
-                        <button>Acessar</button>
+                      <button>Acessar</button>
                     </a>
                   </div>
                 </div>
               </div>
               <div class="project-tile">
-                  <img src="https://cdn.discordapp.com/attachments/1109149984357613638/1116476210655019138/imagem2.png"/>
-                  <div class="overlay">
-                    <div class="project-description">
-                      <h3>Retro Store</h3>
-                      <p>
-                        Site de e-commerce feito com API de fake store para um trabalho dao PUC Minas
-                      </p>
-                      <a href="https://joseminelli.github.io/retro-store" target="_blank">
-                          <button>Acessar</button>
-                      </a>
-                    </div>
+                <img
+                  src="https://cdn.discordapp.com/attachments/1109149984357613638/1116476210655019138/imagem2.png"
+                />
+                <div class="overlay">
+                  <div class="project-description">
+                    <h3>Retro Store</h3>
+                    <p>
+                      Site de e-commerce feito com API de fake store para um
+                      trabalho dao PUC Minas
+                    </p>
+                    <a
+                      href="https://joseminelli.github.io/retro-store"
+                      target="_blank"
+                    >
+                      <button>Acessar</button>
+                    </a>
                   </div>
+                </div>
               </div>
               <div class="project-tile">
                 <img
@@ -160,11 +171,9 @@
                 <div class="overlay">
                   <div class="project-description">
                     <h3>Hooly</h3>
-                    <p>
-                      Site estático inspirado na Amazon
-                    </p>
+                    <p>Site estático inspirado na Amazon</p>
                     <a href="https://joseminelli.github.io/hooly/">
-                        <button>Acessar</button>
+                      <button>Acessar</button>
                     </a>
                   </div>
                 </div>
@@ -178,10 +187,11 @@
                   <div class="project-description">
                     <h3>Site Razer</h3>
                     <p>
-                      Site estático feito como uma ideia de como seria uma loja de produtos da razer
+                      Site estático feito como uma ideia de como seria uma loja
+                      de produtos da razer
                     </p>
                     <a href="https://joseminelli.github.io/SiteRazer/">
-                        <button>Acessar</button>
+                      <button>Acessar</button>
                     </a>
                   </div>
                 </div>
@@ -199,7 +209,8 @@
                   <div class="timeline-content">
                     <h3>Faculdade de Ciência da computação</h3>
                     <p>
-                      Nesse curso já aprendi muito de front-end e começando back-end. Em breve muito mais coisas
+                      Nesse curso já aprendi muito de front-end e começando
+                      back-end. Em breve muito mais coisas
                     </p>
                   </div>
                 </div>
@@ -208,7 +219,10 @@
                   <div class="timeline-content">
                     <h3>Design</h3>
                     <p>
-                      Comecei a estudar design para aprimorar minhas habilidades artísticas, fazendo com que hoje já saiba psicologia e teoria das cores, boa utilização de ferramentas de criação de interfaces e de edição de imagens e vídeos.
+                      Comecei a estudar design para aprimorar minhas habilidades
+                      artísticas, fazendo com que hoje já saiba psicologia e
+                      teoria das cores, boa utilização de ferramentas de criação
+                      de interfaces e de edição de imagens e vídeos.
                     </p>
                   </div>
                 </div>
@@ -217,7 +231,8 @@
                   <div class="timeline-content">
                     <h3>Escola de tecnologia</h3>
                     <p>
-                      Comecei em uma escola de tecnologia onde tive meu primeiro contato real com a programação e toda essa área.
+                      Comecei em uma escola de tecnologia onde tive meu primeiro
+                      contato real com a programação e toda essa área.
                     </p>
                   </div>
                 </div>
@@ -227,16 +242,13 @@
 
           <section class="content-card contact" id="contact">
             <h1>Contato</h1>
-            <form
-              class="form"
-              id="form"
-              action="https://www.freecodecamp.com/email-submit"
-            >
+            <form class="form" id="form">
               <div class="input-box">
                 <input
                   type="text"
                   class="text-input"
                   name="name"
+                  id="name"
                   placeholder="Nome"
                 />
               </div>
@@ -250,27 +262,20 @@
                 />
               </div>
               <div class="input-box">
-                <input
-                  type="subject"
-                  class="text-input"
-                  name="subject"
-                  id="subject"
-                  placeholder="Título"
-                />
-              </div>
-              <div class="input-box">
                 <textarea
                   name="text"
                   class="message"
+                  id="message"
                   placeholder="Mensagem..."
                 ></textarea>
               </div>
               <div class="input-box">
                 <input
-                  type="submit"
+                  type="button"
                   class="submit-btn"
                   id="submit"
-                  value="Enviar"
+                  value="Send Email"
+                  onclick="mandarEmail()"
                 />
               </div>
             </form>
@@ -278,6 +283,15 @@
         </div>
       </div>
     </div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function(){
+         emailjs.init("tN2IIqHlOHfI7SGrZ");
+      })();
+   </script>
     <script src="script.js"></script>
   </body>
 </html>
