@@ -35,11 +35,11 @@
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
-
 html {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
-  background-color: var(--background-color);
+  background: radial-gradient(ellipse at bottom, #08000e 0%, #181818 100%);
+  overflow: hidden;
 }
 
 a {
@@ -84,6 +84,7 @@ h2 {
   order: 2;
   background: #eaeaea;
   width: 70px;
+  z-index: 5;
   margin-left: 20px;
   border-radius: 35px;
   padding: 15px 0;
@@ -103,6 +104,7 @@ h2 {
 
 
 .portfolio {
+  z-index: 5;
   display: flex;
   background: var(--background-color-2);
   height: 80vh;
@@ -454,6 +456,7 @@ textarea {
 @media screen and (max-width: 1200px) {
   html {
     scroll-behavior: smooth;
+    overflow:scroll;
   }
 
   .container {
