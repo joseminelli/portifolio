@@ -1,6 +1,6 @@
 const section = document.getElementById("modalNovo"),
-section2 = document.getElementById("modalNovo2"),
-closeBtn2 = document.querySelector(".close-btn2"),
+  section2 = document.getElementById("modalNovo2"),
+  closeBtn2 = document.querySelector(".close-btn2"),
   closeBtn = document.querySelector(".close-btn"),
   overlay = document.querySelector(".overlay");
 
