@@ -13,6 +13,7 @@
       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="fundo.css" />
@@ -22,6 +23,28 @@
   </head>
 
   <body>
+    <section id="modalNovo">
+        <span class="overlay"></span>
+        <div class="modal-box">
+          <i class="fa-regular fa-circle-xmark"></i>
+          <h2>Devagar aí</h2>
+          <h3>Você precisa preencher todos os campos antes de enviar</h3>
+          <div  class="buttons">
+            <button id="modalbtn"class="close-btn">Ok, vou verificar</button>
+          </div>
+        </div>
+      </section>
+      <section id="modalNovo2">
+        <span class="overlay"></span>
+        <div class="modal-box">
+          <i class="fa-regular fa-circle-check"></i>
+          <h2>Email enviado!</h2>
+          <h3>Irei te responder assim que possível</h3>
+          <div  class="buttons">
+            <button id="modalbtn"class="close-btn2">Tudo bem</button>
+          </div>
+        </div>
+      </section>
     <nav id="navbar" class="navbar"><a href="#"></a></nav>
     <div id='stars'></div>
     <div id='stars2'></div>
@@ -108,9 +131,11 @@
                 <span class="skill">API</span>
                 <span class="skill">C</span>
                 <span class="skill">C#</span>
+                <span class="skill">C++</span>
+                <span class="skill">Arduino</span>
                 <span class="skill">Figma</span>
-                <span class="skill">Photoshop</span>
                 <span class="skill">After Effects</span>
+                <span class="skill">Photoshop</span>
               </div>
 
               <div class="about-item languages">

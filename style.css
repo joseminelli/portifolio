@@ -278,24 +278,12 @@ h2 {
 }
 
 .project-tile img {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
+  z-index: 80;
   filter: contrast(80%) brightness(100%) grayscale(0%);
-}
-
-.overlay {
-  background: #965aa1c8;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  width: 0%;
-  height: 100%;
-  color: white;
-  z-index: 2;
-  transition: 0.5s ease;
 }
 
 .project-description {
@@ -355,7 +343,7 @@ button:hover {
   top: 55px;
   height: calc(100% - 100px);
   background-color: var(--accent-color);
-  z-index: 9;
+  z-index: 6;
 }
 
 .timeline-date {
@@ -487,7 +475,7 @@ textarea {
     flex-direction: row;
     position: fixed;
     bottom: 15px;
-    z-index: 1000;
+    z-index: 999;
     width: auto;
     height: fit-content;
     border-radius: 50px;
