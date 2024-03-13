@@ -12,7 +12,10 @@ Este portfólio é uma representação do meu trabalho e das minhas habilidades 
 
 ## Capturas de Tela
 
-![Captura de Tela 1](https://media.discordapp.net/attachments/933499827638124575/1164192101572038726/screenshot1.png?ex=65425162&is=652fdc62&hm=5b9b7a2e35ad8c0578ff5ca3ea871e075f2cbc2229c169ae2ace1b24bc01255d&=&width=1177&height=662)
+<div align="center" >
+  
+ <img src="assets/images/Screenshot.png" alt="Captura de Tela 1" style="width: 80%">
+</div>
 
 ## 🎨 Color Reference
 
