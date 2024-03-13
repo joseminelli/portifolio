@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset=" UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Portifólio</title>
+    <meta name="title" content="Devfolio - A software engineer portfolio" />
+    <meta
+      name="description"
+      content="This is a personal portfolio made by codewithsadee"
+    />
+
+    <link rel="shortcut icon" href="./favicon.png" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Open+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <a href="#" class="logo">
+        <img
+          src="./assets/images/Logo_dark.png"
+          alt="Devfolio"
+          width="145"
+          height="32"
+          class="dark"
+        />
+        <img
+          src="./assets/images/Logo_light.png"
+          alt="Devfolio"
+          width="145"
+          height="32"
+          class="light"
+        />
+      </a>
+
+      <button class="icon-btn theme-btn" data-theme-btn>
+        <span class="material-symbols-outlined dark" aria-hidden="true">
+          dark_mode
+        </span>
+        <span class="material-symbols-outlined light" aria-hidden="true">
+          light_mode
+        </span>
+
+        <div class="state-layer"></div>
+      </button>
+    </header>
+
+    <main>
+      <article>
+        <section class="section hero">
+          <div class="container">
+            <figure
+              class="hero-banner img-holder"
+              style="--width: 240; --height: 240"
+            >
+              <img
+                src="./assets/images/profile.jpg"
+                width="240"
+                height="240"
+                alt="Ahmed Khalid"
+                class="img-cover"
+              />
+            </figure>
+
+            <div class="hero-content">
+              <span class="label-large section-subtitle"
+                >Software Engineer</span
+              >
+
+              <h1 class="display-small">José Minelli</h1>
+
+              <p class="body-large section-text">
+               " Independent developer creating digital experiences "
+              </p>
+
+              <div class="btn-wrapper">
+                <a href="mailto:joseminelli04@gmail.com" class="chip">
+                  <span class="material-symbols-outlined" aria-hidden="true">
+                    mail
+                  </span>
+
+                  <span class="label-large">joseminelli04@gmail.com</span>
+
+                  <div class="state-layer"></div>
+                </a>
+
+                <a href="tel:+5531996202307" class="chip">
+                  <span class="material-symbols-outlined" aria-hidden="true">
+                    call
+                  </span>
+
+                  <span class="label-large">+5531996202307</span>
+
+                  <div class="state-layer"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="article">
+          <div class="about-card">
+            <h2 class="card-title title-medium">Sobre</h2>
+
+            <p class="body-medium card-text">
+              Entusiasta de tecnologia de 18 anos, com cinco anos de experiência em programação e atualmente cursando Sistemas de Informação
+            </p>
+
+            <ul class="about-list">
+              <li class="list-item">
+                <span class="material-symbols-outlined" aria-hidden="true">
+                  location_on
+                </span>
+
+                <span class="label-medium">Belo Horizonte, Brasil</span>
+              </li>
+
+              <li class="list-item">
+                <span class="material-symbols-outlined" aria-hidden="true">
+                  work
+                </span>
+
+                <span class="label-medium">Estudante</span>
+              </li>
+
+              <li class="list-item">
+                <span class="material-symbols-outlined" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+                </span>
+
+                <a href="https://www.linkedin.com/in/joseminelli/" target="_blank" class="label-medium"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="primary-tabs">
+              <button class="tab-btn active" data-tab-btn="project">
+                <span class="tab-text title-small">Projetos</span>
+
+                <div class="state-layer"></div>
+              </button>
+
+              <button class="tab-btn" data-tab-btn="resume">
+                <span class="tab-text title-small">Sobre</span>
+
+                <div class="state-layer"></div>
+              </button>
+
+              <button class="tab-btn" data-tab-btn="contact">
+                <span class="tab-text title-small">Contato</span>
+
+                <div class="state-layer"></div>
+              </button>
+            </div>
+
+            <section
+              class="section tab-content active"
+              data-tab-content="project"
+            >
+              <div class="container">
+                <div class="project-list">
+                  <div class="card QuantumDrive">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 334; --height: 180"
+                    >
+                      <img
+                        src="./assets/images/project-1.png"
+                        alt="Pixstock - Stock Media App"
+                        width="334"
+                        height="180"
+                        class="img-cover"
+                      />
+                    </figure>
+                    <div id="driftDiv" class="state-layer-drift">
+                      <img class="drift"src="./assets/images/Drift_load.png">
+                    </div>
+                    <div class="card-content">
+                      <span class="label-large card-subtitle">Vídeo Game</span>
+
+                      <h3 class="title-large card-title">
+                        Quantum Drive
+                      </h3>
+                    </div>
+
+                    <a href="https://store.steampowered.com/app/2707960/Quantum_Drive/?curator_clanid=44757635" target="_blank" class="state-layer"></a>
+                  </div>
+
+                  <div class="card AdoteSuaPatinha">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 334; --height: 180"
+                    >
+                      <img
+                        src="./assets/images/project-2.png"
+                        alt="Cook.io - Recipe App"
+                        width="334"
+                        height="180"
+                        class="img-cover"
+                      />
+                    </figure>
+                    <div class="paw paw4">
+                      <img src="./assets/images/paw.png" width="7%" height="7%">
+                    </div>
+                    <div class="paw paw3">
+                      <img src="./assets/images/paw.png" width="7%" height="7%">
+                    </div>
+                    <div class="paw paw2">
+                      <img src="./assets/images/paw.png" width="7%" height="7%">
+                    </div>
+                    <div class="paw paw1">
+                      <img src="./assets/images/paw.png" width="7%" height="7%">
+                    </div>
+                    <div class="card-content">
+                      <span class="label-large card-subtitle">Web App (repositório)</span>
+
+                      <h3 class="title-large card-title">
+                        Adote sua Patinha
+                      </h3>
+                    </div>
+
+                    <a href="https://github.com/joseminelli/adote-sua-patinha" target="_blank" class="state-layer"></a>
+                  </div>
+
+                  <div class="card">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 334; --height: 180"
+                    >
+                      <img
+                        src="./assets/images/project-3.png"
+                        alt="GitFinder - Github User Finder"
+                        width="334"
+                        height="180"
+                        class="img-cover"
+                      />
+                    </figure>
+
+                    <div class="card-content">
+                      <span class="label-large card-subtitle">Web App</span>
+
+                      <h3 class="title-large card-title">
+                       Silvia Pintura Country
+                      </h3>
+                    </div>
+
+                    <a href="https://silviapinturacountry.com/" target="_blank" class="state-layer"></a>
+                  </div>
+
+                  <div class="card">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 334; --height: 180"
+                    >
+                      <img
+                        src="./assets/images/project-4.png"
+                        alt="Weatherio - Live Weather App"
+                        width="334"
+                        height="180"
+                        class="img-cover"
+                      />
+                    </figure>
+
+                    <div class="card-content">
+                      <span class="label-large card-subtitle">Web App (repositório)</span>
+
+                      <h3 class="title-large card-title">
+                        Retro Store
+                      </h3>
+                    </div>
+
+                    <a href="https://github.com/joseminelli/retro-store" target="_blank" class="state-layer"></a>
+                  </div>
+
+                  <div class="card">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 334; --height: 180"
+                    >
+                      <img
+                        src="./assets/images/project-5.png"
+                        alt="Tvflix - Netflix Clone 2.0"
+                        width="334"
+                        height="180"
+                        class="img-cover"
+                      />
+                    </figure>
+
+                    <div class="card-content">
+                      <span class="label-large card-subtitle">Web App</span>
+
+                      <h3 class="title-large card-title">
+                        Hooly
+                      </h3>
+                    </div>
+
+                    <a href="joseminelli.github.io/hooly/" target="_blank" class="state-layer"></a>
+                  </div>
+
+                  <div class="card">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 334; --height: 180"
+                    >
+                      <img
+                        src="./assets/images/project-6.png"
+                        alt="Travelia - Travel Website"
+                        width="334"
+                        height="180"
+                        class="img-cover"
+                      />
+                    </figure>
+
+                    <div class="card-content">
+                      <span class="label-large card-subtitle">C library</span>
+
+                      <h3 class="title-large card-title">
+                        JMRL lib
+                      </h3>
+                    </div>
+
+                    <a href="https://github.com/joseminelli/JMRL_LIB"  target="_blank" class="state-layer"></a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="section tab-content resume-tab"
+              data-tab-content="resume"
+            >
+              <div class="container">
+                
+                <!--Experiência  -->
+
+                <h2 class="section-title underine title-medium">Experiência</h2>
+
+                <ul class="list">
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Indie game developer - Minelli
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2023 - Present</span
+                      >
+
+                      <span class="body-medium card-text"
+                        >Estúdio pessoal de desenvolvimento de jogos, atualmente com o projeto <b>Quantum Drive</b> em andamento</span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Freelancer
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2022 - Present</span
+                      >
+
+                      <span class="body-medium card-text">
+                        Presto serviços de freelancer na área de desenvolvimento web em plataformas como Workana.
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+                <hr>
+                <br>
+                <!--Educação  -->
+
+                <h2 class="section-title underine title-medium">Educação</h2>
+
+                <ul class="list">
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Sistemas de Informação, Newton Paiva
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2023 - Present (expectativa - 2026)</span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Ciencia da Computação, PUC Minas
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2022 - 2023</span
+                      >
+                    </div>
+                  </li>
+                </ul>
+                <hr>
+                <br>
+
+                <!--Certificações  -->
+
+                <h2 class="section-title underine title-medium">Certificações</h2>
+                <ul class="list">
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        C# básico 
+                        <a href="https://www.hackerrank.com/certificates/547e10dc463f" target="_blank">(HackerRank Certification)</a>
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        > 2024 </span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                       Avaliação de JavaScript<br>
+                        (LinkedIn Certification - top 30%)
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        > 2023 </span
+                      >
+                    </div>
+                  </li>
+                  
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                       Avaliação de Desenvolvimento de front-end<br>
+                        (LinkedIn Certification - top 15%)
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        > 2023 </span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                       Avaliação de inglês avançado<br>
+                        <a href="https://www.workana.com/workers/certification/33bab323d594e8f84d43041987fdb8af/test-de-ingles-2/1059355" target="_blank">(Workana)</a>
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        > 2023 </span
+                      >
+                    </div>
+                  </li>
+                </ul>
+                <hr>
+                <br>
+
+                <h2 class="section-title underine title-medium">
+                  Linguagens e ferramentas
+                </h2>
+
+                <ul class="resume-bottom-list">
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/html5.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="HTML5"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">HTML5</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/css3.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="CSS3"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">CSS3</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/javascript.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="JavaScript"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">JavaScript</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/react.js.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="React.js"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">React.js</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/node.js.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="Node.js"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">Node.js</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/c-original.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="MongoDB"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">C</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/csharp-original.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="MongoDB"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">C#</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/cplusplus-original.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="MongoDB"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">C++</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/java-original.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="VS Code"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">Java</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/python-original.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="VS Code"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">Python</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/VS_code.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="VS Code"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">VS Code</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/postgresql-original.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="GitHub"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">PostgreSLQ</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/github.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="GitHub"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">GitHub</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/intellij-original.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="GitHub"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">IntelliJ</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/unity-original.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="GitHub"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">Unity</span>
+                  </li>
+
+                  <li class="resume-bottom-item">
+                    <img
+                      src="./assets/images/unrealengine-original.svg"
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      alt="GitHub"
+                      class="icon"
+                    />
+
+                    <span class="label-medium">Unreal</span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section
+              class="section tab-content contact-tab"
+              data-tab-content="contact"
+            >
+              <div class="container">
+                <div class="contact-info">
+                  <h4 class="section-title title-small">Informações de contato</h4>
+
+                  <ul class="contact-info-list">
+                    <li class="contact-info-item">
+                      <div class="icon-box">
+                        <span
+                          class="material-symbols-outlined"
+                          aria-hidden="true"
+                        >
+                          mail
+                        </span>
+                      </div>
+
+                      <div class="info-content">
+                        <p class="label-small info-title">Email</p>
+
+                        <a
+                          href="mailto:joseminelli04@gmail.com"
+                          class="label-small info-text"
+                          >joseminelli04@gmail.com</a
+                        >
+
+                        <a
+                          href="mailto:minellidev@gmail.com"
+                          class="label-small info-text"
+                          >minellidev@gmail.com</a
+                        >
+                      </div>
+                    </li>
+
+                    <li class="contact-info-item">
+                      <div class="icon-box">
+                        <span
+                          class="material-symbols-outlined"
+                          aria-hidden="true"
+                        >
+                          call
+                        </span>
+                      </div>
+
+                      <div class="info-content">
+                        <p class="label-small info-title">Telefone</p>
+
+                        <a
+                          href="tel:+5531996202307"
+                          class="label-small info-text"
+                          >+55 (31) 99620-2307</a
+                        >
+                      </div>
+                    </li>
+                  </ul>
+
+                  <h4 class="title-small">Social Info</h4>
+
+                  <div class="social-list">
+                    
+
+                    <a href="https://github.com/joseminelli" target="_blank" class="social-item">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g clip-path="url(#clip0_66_1649)">
+                          <path
+                            d="M0.184072 10.462C-0.594929 15.368 1.58507 21.285 8.30707 23.468C8.42707 23.49 8.53807 23.5 8.64207 23.5C9.42407 23.5 9.96207 22.918 9.96207 22.2C9.86507 21.677 10.3451 19.558 9.04207 19.843C6.52307 20.379 6.22107 18.972 5.83707 18.236C6.92307 19.63 8.55507 19.595 9.78607 19.055C10.4691 18.755 10.1121 17.991 10.4361 17.712C10.5468 17.6167 10.6273 17.4911 10.6677 17.3507C10.7081 17.2103 10.7065 17.0611 10.6633 16.9216C10.6201 16.782 10.537 16.6581 10.4244 16.5651C10.3117 16.4721 10.1743 16.414 10.0291 16.398C7.71507 16.143 5.57207 15.397 5.57207 11.696C5.57207 9.52797 7.07707 9.33397 6.66207 8.42697C6.64707 8.39397 6.32907 7.67297 6.61707 6.57797C8.03607 6.83997 8.68907 7.85797 9.37007 7.67497C11.0571 7.21497 12.9141 7.21497 14.6001 7.67497C15.3041 7.86397 15.8071 6.87397 17.3381 6.57197C17.7791 8.22597 16.8651 8.62997 17.4411 9.24897C18.0731 9.92897 18.3941 10.752 18.3941 11.696C18.3941 17.26 13.6771 15.653 13.2931 16.916C13.2501 17.0565 13.2495 17.2065 13.2913 17.3474C13.3331 17.4882 13.4155 17.6136 13.5281 17.708C14.1381 18.221 14.0581 19.538 13.9931 20.597C13.9261 21.695 13.8681 22.642 14.4751 23.176C14.6891 23.366 15.0701 23.569 15.7591 23.429C22.3931 21.298 24.5891 15.407 23.8221 10.512C21.7261 -2.85603 2.29607 -2.84003 0.184072 10.462ZM8.45407 21.44L8.45807 21.945C7.95288 21.7709 7.46008 21.5628 6.98307 21.322C7.40807 21.431 7.89607 21.478 8.45407 21.44ZM8.82407 17.74L8.80907 17.82C7.95607 18.072 7.30007 17.821 6.85207 17.068L6.85107 17.066C7.53107 17.43 8.23207 17.626 8.82407 17.74ZM12.0001 1.99997C23.8331 1.99997 26.5021 18.267 15.4691 21.941C15.4311 21.644 15.4661 21.084 15.4901 20.689C15.5481 19.738 15.6161 18.63 15.2771 17.704C20.3651 16.645 20.7901 11.058 18.8311 8.56897C19.0741 7.61697 18.9761 5.37997 18.1021 5.10597C17.8961 5.04097 16.7971 4.80197 14.6651 6.14297C12.9023 5.72648 11.0668 5.72648 9.30407 6.14297C8.24007 5.47597 5.84207 4.39097 5.38207 5.54297C4.84807 6.88497 4.97507 7.96997 5.13407 8.57297C3.39507 10.777 3.91607 14.467 5.66807 16.199C4.67507 15.724 3.30707 15.562 3.01207 16.513C2.68907 17.55 3.92407 17.424 4.69107 19.317C4.76407 19.553 4.89907 19.83 5.10607 20.105C-1.70493 14.54 1.58107 1.99997 12.0001 1.99997Z"
+                            style="fill: var(--on-surface-variant)"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_66_1649">
+                            <rect width="24" height="24" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </a>
+
+                    <a href="https://www.instagram.com/joseminelli_/" target="_blank" class="social-item">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g clip-path="url(#clip0_66_1657)">
+                          <mask
+                            id="mask0_66_1657"
+                            style="mask-type: luminance"
+                            maskUnits="userSpaceOnUse"
+                            x="0"
+                            y="0"
+                            width="24"
+                            height="24"
+                          >
+                            <path
+                              d="M0 7.05719e-05H23.9999V24H0V7.05719e-05Z"
+                              fill="white"
+                            />
+                          </mask>
+                          <g mask="url(#mask0_66_1657)">
+                            <path
+                              d="M23.062 12C23.0596 12.9866 23.0485 13.9731 23.035 14.9596C23.0187 16.1498 23.0003 17.3405 22.7018 18.5103C22.3888 19.7371 21.7715 20.795 20.811 21.5783C19.7989 22.4036 18.5755 22.8375 17.2552 22.9178C15.5039 23.0243 13.7519 23.0664 12 23.0622C10.248 23.0664 8.496 23.0243 6.7448 22.9178C5.42443 22.8375 4.20109 22.4036 3.18897 21.5783C2.2285 20.795 1.61116 19.7371 1.29813 18.5103C0.999629 17.3405 0.981255 16.1498 0.964989 14.9596C0.951489 13.9731 0.940285 12.9866 0.937988 12C0.940285 11.0135 0.951489 10.0269 0.964989 9.04045C0.981255 7.85025 0.999629 6.65954 1.29813 5.48973C1.61116 4.26301 2.2285 3.20505 3.18897 2.42182C4.20109 1.59644 5.42443 1.16262 6.7448 1.08232C8.496 0.97582 10.248 0.933726 12 0.937851C13.7519 0.933726 15.5039 0.97582 17.2552 1.08232C18.5755 1.16262 19.7989 1.59644 20.811 2.42182C21.7715 3.20505 22.3888 4.26301 22.7018 5.48973C23.0003 6.65954 23.0187 7.85025 23.035 9.04045C23.0485 10.0269 23.0596 11.0135 23.062 12Z"
+                              style="stroke: var(--on-surface-variant)"
+                              stroke-width="1.5"
+                              stroke-miterlimit="10"
+                            />
+                            <path
+                              d="M16.875 12C16.875 14.7183 14.6714 16.9219 11.9531 16.9219C9.23484 16.9219 7.03125 14.7183 7.03125 12C7.03125 9.28174 9.23484 7.07815 11.9531 7.07815C14.6714 7.07815 16.875 9.28174 16.875 12Z"
+                              style="stroke: var(--on-surface-variant)"
+                              stroke-width="1.5"
+                              stroke-miterlimit="10"
+                            />
+                            <path
+                              d="M19.875 5.67188C19.875 6.4485 19.2454 7.07812 18.4687 7.07812C17.6921 7.07812 17.0625 6.4485 17.0625 5.67188C17.0625 4.89526 17.6921 4.26563 18.4687 4.26563C19.2454 4.26563 19.875 4.89526 19.875 5.67188Z"
+                              style="fill: var(--on-surface-variant)"
+                            />
+                          </g>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_66_1657">
+                            <rect width="24" height="24" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="contact-form">
+                  <h3 class="title-large">Let’s Work Together.</h3>
+
+                  <div action="" method="post" class="input-wrapper">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name*"
+                      required
+                      class="input-field"
+                      id="name"
+                    />
+
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email*"
+                      required
+                      class="input-field"
+                      id="email"
+                    />
+
+                    <input
+                      type="text"
+                      name="subject"
+                      placeholder="Subject"
+                      class="input-field"
+                      id="subject"
+                    />
+
+                    <textarea
+                      name="message"
+                      placeholder="Message*"
+                      required
+                      class="textarea"
+                      id="message"
+                    ></textarea>
+
+                    <button id="sendBtn" class="btn">
+                      <span class="label-large">Send Message</span>
+
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <p class="body-medium">
+          Copyright 2023. All right reserved by José Minelli
+        </p>
+      </div>
+    </footer>
+    <script src="./js/script.js"></script>
+    <script src="./js/anims.js"></script>
+  </body>
+</html>
