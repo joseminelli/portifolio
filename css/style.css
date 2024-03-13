@@ -139,7 +139,7 @@
   }
 
   100% {
-    left: 70%;
+    left: 76%;
     bottom: 30%;
     transform: rotate(-145deg);
   }
@@ -163,6 +163,14 @@
   100% {
     opacity: 0;
   }
+}
+
+.semQuebra{ 
+  display: inline;
+}
+
+.linkDestaque{
+  color : var(--primary);
 }
 
 .paw {
