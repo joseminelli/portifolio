@@ -192,17 +192,29 @@ body {
 }
 
 .hr2 {
+  width: 30%;
+  margin: 0;
+}
+.hr22 {
   width: 50%;
+  margin: 0;
 }
 
 .hr2Div{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
+  margin-top: -25px;
+}
+
+.hr2Div2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
 .link{
   text-decoration: underline !important;
   text-decoration-color: var(--primary);
