@@ -146,6 +146,10 @@
   box-sizing: border-box;
 }
 
+*{
+  transition: ease-in-out 0.21s;
+}
+
 li { 
   list-style: none; 
 }
@@ -183,11 +187,13 @@ html {
   font-family: var(--font-secondary);
   font-size: var(--base-font-size);
   scroll-behavior: smooth;
+  
 }
 
 body {
   background-color: var(--background);
   color: var(--on-background);
+  
   font-size: var(--body-large);
 }
 
