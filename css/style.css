@@ -1,5 +1,8 @@
 :root {
   --background-light: hsl(293, 100%, 98%);
+  --redirect-hover-light: rgba(5, 5, 5, 0.192);
+  --redirect-light: rgb(49 49 49 / 9%);
+  --vinheta-light: hsl(0, 0%, 62%);
   --on-background-light: hsl(264, 8%, 12%);
   --surface-light: hsl(293, 100%, 98%);
   --on-surface-light: hsl(264, 8%, 12%);
@@ -12,7 +15,10 @@
   --outline-light: hsl(270, 4%, 47%);
   --outline-variant-light: hsl(270, 11%, 79%);
 
+  --redirect-hover-dark: rgba(255, 255, 255, 0.192);
+  --redirect-dark: rgba(255, 255, 255, 0.089);
   --background-dark: hsl(260, 14%, 8%);
+  --vinheta-dark: hsl(0, 0%, 0%);
   --on-background-dark: hsl(280, 17%, 90%);
   --surface-dark: hsl(260, 14%, 8%);
   --on-surface-dark: hsl(280, 17%, 90%);
@@ -63,8 +69,10 @@
 
 [data-theme="light"] {
   color-scheme: light;
-
+  --redirect: var(--redirect-light);
+  --redirect-hover: var(--redirect-hover-light);
   --background: var(--background-light);
+  --vinheta: var(--vinheta-light);
   --on-background: var(--on-background-light);
   --surface: var(--surface-light);
   --on-surface: var(--on-surface-light);
@@ -81,7 +89,10 @@
 [data-theme="dark"] {
   color-scheme: dark;
 
+  --redirect: var(--redirect-dark);
+  --redirect-hover: var(--redirect-hover-dark);
   --background: var(--background-dark);
+  --vinheta: var(--vinheta-dark);
   --on-background: var(--on-background-dark);
   --surface: var(--surface-dark);
   --on-surface: var(--on-surface-dark);
@@ -183,6 +194,8 @@ html {
 
 body {
   background-color: var(--background);
+  /* sombra imitando vinheta */
+  box-shadow: inset 0 0 200px 100px var(--vinheta);
   color: var(--on-background);
 
   font-size: var(--body-large);
@@ -204,13 +217,13 @@ body {
   text-wrap: nowrap;
   width: fit-content;
   height: fit-content;
-  background-color: rgba(255, 255, 255, 0.089);
+  background-color: var(--redirect);
   padding: 0.3em;
   text-align: center;
   transition: var(--motion-duration-short-1) var(--motion-easing-linear);
 }
 .state-layer2:hover {
-  background-color: rgba(255, 255, 255, 0.192);
+  background-color: var(--redirect-hover);
   color: white;
 }
 .hr2 {
@@ -436,10 +449,20 @@ body {
   box-shadow: var(--elevation-1);
 }
 
-.primary-tabs {
+#primary-tabs-bg{
   background-color: var(--background);
+  position: absolute;
+  width: 500px;
+  height: 200px;
+}
+
+.primary-tabs {
+  /* background-color: var(--background); */
   margin-block-start: 24px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   margin-inline: 16px;
+  column-gap: 4px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
@@ -447,11 +470,14 @@ body {
 }
 
 .tab-btn {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   height: 48px;
+  margin-inline: 2px;
   width: 100%;
   display: grid;
   place-content: center;
-  background-color: var(--surface);
+  background-color: var(--surface-container-low);
   color: var(--on-surface-variant);
   --state-layer-bg: var(--on-surface-variant);
 }
@@ -563,10 +589,11 @@ body {
 }
 
 .topbar {
-  background-color: var(--background);
+  /* background-color: var(--background);  */
   position: fixed;
   top: 0;
   left: 0;
+  pointer-events: none;
   width: 100%;
   height: var(--top-bar-height);
   display: flex;
@@ -575,6 +602,40 @@ body {
   padding-inline: 16px;
   z-index: 4;
 }
+
+.gradient-blur-container {
+  width: 100%; position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding-inline: 16px;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Certifica-se que a imagem está no fundo */
+}
+
+#blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Eleva o blur acima da imagem */
+  backdrop-filter: blur(50px); /* Aplica o desfoque */
+  mask-image: linear-gradient(to bottom, black 0%, transparent 10%); /* Gradiente para a máscara */
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%); /* Suporte para navegadores baseados em Webkit */
+}
+
 
 [data-theme="dark"] .logo .light,
 [data-theme="light"] .logo .dark {
@@ -588,6 +649,8 @@ body {
 
 .theme-btn {
   color: var(--on-surface-variant);
+
+  pointer-events:all !important;
   --state-layer-bg: var(--on-surface-variant);
   border-radius: var(--radius-full);
   overflow: hidden;
@@ -812,7 +875,8 @@ body {
   .about-card,
   .primary-tabs {
     position: sticky;
-    top: 64px;
+    z-index: 3;
+    top: 30px;
   }
 
   .primary-tabs {
