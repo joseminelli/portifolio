@@ -864,6 +864,11 @@ body {
   animation: fadeIn 0.5s ease;
 }
 
+@media (max-width: 768px) {
+  body{
+    box-shadow: inset 0 0 0 0px var(--vinheta) !important;
+  }
+}
 @media (min-width: 768px) {
   .article {
     position: relative;
