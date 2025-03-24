@@ -195,7 +195,7 @@ html {
 body {
   background-color: var(--background);
   /* sombra imitando vinheta */
-  box-shadow: inset 0 0 200px 100px var(--vinheta);
+  box-shadow: inset 0 0 11vh .5vh var(--vinheta);
   color: var(--on-background);
 
   font-size: var(--body-large);
