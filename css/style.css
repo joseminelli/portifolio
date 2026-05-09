@@ -325,6 +325,7 @@ body {
 
 .body-large {
   font-size: var(--body-large);
+  color: var(--primary);
   font-weight: var(--weight-regular);
   line-height: 24px;
   letter-spacing: 0.5px;
