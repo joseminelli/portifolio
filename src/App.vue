@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import ContactPanel from "./components/ContactPanel.vue";
 import ProjectGrid from "./components/ProjectGrid.vue";
 import TimelineSection from "./components/TimelineSection.vue";
+import SkillsVisualization from "./components/SkillsVisualization.vue";
 import { experiences, hero, projects, stack } from "./data/portfolioData";
 
 const activeTab = ref("projects");
@@ -92,6 +93,8 @@ onMounted(() => {
         </div>
         <p class="meta">LOCAL_NODE: {{ hero.location }}</p>
       </section>
+
+      <SkillsVisualization />
 
       <section class="workspace-panel reveal-item" data-aos="fade-up" data-aos-delay="300">
         <p class="module-tag workspace-tag">SYSTEM_TERMINAL // CONTENT</p>

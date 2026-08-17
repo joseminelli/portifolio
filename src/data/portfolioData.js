@@ -157,3 +157,38 @@ export const stack = [
   "Unity",
   "Unreal"
 ];
+
+export const skillsData = {
+  backend: [
+    { name: "C# / .NET", proficiency: 90 },
+    { name: "PHP", proficiency: 85 },
+    { name: "Node.js", proficiency: 80 },
+    { name: "Python", proficiency: 75 },
+    { name: "REST APIs", proficiency: 90 }
+  ],
+  frontend: [
+    { name: "Vue.js", proficiency: 90 },
+    { name: "TypeScript", proficiency: 85 },
+    { name: "Angular", proficiency: 80 },
+    { name: "Next.js", proficiency: 80 },
+    { name: "Responsive Design", proficiency: 90 }
+  ],
+  mobile: [
+    { name: "Flutter", proficiency: 85 },
+    { name: "React Native", proficiency: 70 },
+    { name: "Mobile UX", proficiency: 85 }
+  ],
+  gamedev: [
+    { name: "Unreal Engine", proficiency: 80 },
+    { name: "Unity", proficiency: 85 },
+    { name: "C++", proficiency: 75 },
+    { name: "Game Design", proficiency: 80 }
+  ],
+  tools: [
+    { name: "Docker", proficiency: 85 },
+    { name: "Git", proficiency: 95 },
+    { name: "SQL", proficiency: 90 },
+    { name: "PostgreSQL", proficiency: 85 },
+    { name: "Oracle", proficiency: 80 }
+  ]
+};
