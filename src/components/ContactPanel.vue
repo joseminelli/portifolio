@@ -1,40 +1,55 @@
 <script setup>
-import { reactive } from "vue";
+import { socialLinks } from "../data/portfolioData";
 
-const form = reactive({
-  name: "",
-  email: "",
-  subject: "",
-  message: ""
-});
-
-const sendMail = () => {
-  const subject = encodeURIComponent(form.subject || `Contato via portfolio - ${form.name}`);
-  const body = encodeURIComponent(
-    `Nome: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
-  );
-  window.location.href = `mailto:joseminelli04@gmail.com?subject=${subject}&body=${body}`;
+const getIconLabel = (icon) => {
+  const icons = {
+    in: "LinkedIn",
+    gh: "GitHub",
+    be: "Behance",
+    ig: "Instagram",
+    wa: "WhatsApp"
+  };
+  return icons[icon] || icon;
 };
 </script>
 
 <template>
-  <section class="contact-grid reveal-item">
-    <article class="contact-card">
-      <h2>Contato direto</h2>
-      <p>Se quiser falar sobre produto, games ou uma vaga, me chama:</p>
-      <a href="mailto:joseminelli04@gmail.com">joseminelli04@gmail.com</a>
-      <a href="mailto:minellidev@gmail.com">minellidev@gmail.com</a>
-      <a href="tel:+5531996202307">+55 (31) 99620-2307</a>
-      <a href="https://github.com/joseminelli" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="https://www.instagram.com/joseminelli_/" target="_blank" rel="noreferrer">Instagram</a>
-    </article>
+  <section class="contact-section reveal-item">
+    <div class="contact-intro">
+      <h2>Vamos conversar?</h2>
+      <p>Encontre-me em qualquer uma dessas plataformas. Adoraria trocar uma ideia sobre projetos, oportunidades ou tecnologia.</p>
+    </div>
 
-    <form class="contact-form" @submit.prevent="sendMail">
-      <input v-model="form.name" type="text" placeholder="Nome" required />
-      <input v-model="form.email" type="email" placeholder="Email" required />
-      <input v-model="form.subject" type="text" placeholder="Assunto" />
-      <textarea v-model="form.message" placeholder="Mensagem" rows="5" required />
-      <button type="submit">Enviar mensagem</button>
-    </form>
+    <div class="social-grid">
+      <a
+        v-for="social in socialLinks"
+        :key="social.name"
+        :href="social.url"
+        target="_blank"
+        rel="noreferrer"
+        class="social-link"
+        :title="`Visite meu ${social.name}`"
+      >
+        <div class="social-icon" :style="{ '--social-color': social.color }">
+          <svg
+            v-if="social.svg"
+            class="social-svg"
+            v-html="social.svg"
+            :style="{ color: social.color }"
+          />
+        </div>
+        <div class="social-info">
+          <h3>{{ social.name }}</h3>
+          <p>Conecte-se comigo</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="contact-email">
+      <p class="section-label">Ou envie um email direto:</p>
+      <div class="email-links">
+        <a href="mailto:joseminelli04@gmail.com">joseminelli04@gmail.com</a>
+      </div>
+    </div>
   </section>
 </template>

@@ -6,10 +6,20 @@ import TimelineSection from "./components/TimelineSection.vue";
 import { experiences, hero, projects, stack } from "./data/portfolioData";
 
 const activeTab = ref("projects");
-const theme = ref(localStorage.getItem("theme") || "light");
+const theme = ref(localStorage.getItem("theme") || "dark");
 const appReady = ref(false);
 const baseUrl = import.meta.env.BASE_URL;
 const profileSrc = `${baseUrl}assets/images/profile.jpg`;
+const yearNow = new Date().getFullYear();
+
+const setTab = (tabName) => {
+  activeTab.value = tabName;
+  const content = document.getElementById("content");
+
+  if (content) {
+    content.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
 
 const logo = computed(() =>
   theme.value === "dark"
@@ -34,50 +44,48 @@ onMounted(() => {
 <template>
   <div class="app-shell" :class="{ ready: appReady }">
     <div class="bg-noise" :style="{ backgroundImage: `url(${baseUrl}assets/images/topography.svg)` }"></div>
-    <header class="site-header">
-      <img :src="logo" alt="Jose Minelli" class="brand" />
-      <button class="theme-toggle" @click="toggleTheme" type="button">
-        {{ theme === "dark" ? "Light" : "Dark" }}
-      </button>
-    </header>
+    <div class="bg-scanline"></div>
 
-    <main class="main-grid">
+    <main id="content" class="main-grid">
       <section class="hero-card reveal-item">
-        <img :src="profileSrc" alt="Jose Minelli" class="avatar" />
-        <p class="eyebrow">{{ hero.role }}</p>
-        <h1>{{ hero.name }}</h1>
-        <p class="lead">{{ hero.tagline }}</p>
-
-        <div class="cta-row">
-          <a :href="`mailto:${hero.email}`">{{ hero.email }}</a>
-          <a :href="`tel:${hero.phone}`">{{ hero.phone }}</a>
-          <a :href="hero.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+        <p class="module-tag">READY // FULL STACK DEVELOPER ACTIVE | ID_001.SYS</p>
+        <div class="hero-main-line">
+          <img :src="profileSrc" alt="Jose Minelli" class="avatar" />
+          <div>
+            <p class="eyebrow">{{ hero.role }}</p>
+            <h1 class="hero-title">
+              CONSTRUO <span class="hero-highlight">SOLUÇÕES DE ALTO IMPACTO</span>
+            </h1>
+          </div>
         </div>
+
+        <p class="lead">
+          Engenheiro de software focado em escalabilidade, performance e arquitetura. Especializado em backend, modernização de legados e desenvolvimento full stack com C#, .NET, PHP e TypeScript.
+        </p>
       </section>
 
       <section class="about-card reveal-item">
-        <h2>Sobre</h2>
-        <p>
-          Sou Desenvolvedor Full Stack com foco em Flutter, C#, TypeScript e desenvolvimento mobile,
-          com experiencia na criacao de aplicativos, jogos e sistemas web priorizando qualidade e usabilidade.
-        </p>
-        <p>
-          Atualmente atuo na Tecnkisa com modernizacao de sistemas e continuo ampliando projetos autorais
-          com .NET e Vue.
-        </p>
-        <p class="meta">{{ hero.location }}</p>
+        <p class="module-tag">SYSTEM_ARCHIVE // ABOUT</p>
+        <h2>Sobre mim</h2>
+        <div class="about-content">
+          <p v-for="(paragraph, idx) in hero.about.split('\n\n')" :key="idx" class="about-paragraph">
+            {{ paragraph }}
+          </p>
+        </div>
+        <p class="meta">LOCAL_NODE: {{ hero.location }}</p>
       </section>
 
       <section class="workspace-panel reveal-item">
+        <p class="module-tag workspace-tag">SYSTEM_TERMINAL // CONTENT</p>
         <nav class="tabs" aria-label="Navegacao de conteudo">
           <button :class="{ active: activeTab === 'projects' }" @click="activeTab = 'projects'" type="button">
-            Projetos
+            01.PROJETOS
           </button>
           <button :class="{ active: activeTab === 'journey' }" @click="activeTab = 'journey'" type="button">
-            Trajetoria
+            02.TRAJETORIA
           </button>
           <button :class="{ active: activeTab === 'contact' }" @click="activeTab = 'contact'" type="button">
-            Contato
+            03.CONTATO
           </button>
         </nav>
 
@@ -90,7 +98,7 @@ onMounted(() => {
     </main>
 
     <footer class="site-footer">
-      <p>Copyright 2026 Jose Minelli. Todos os direitos reservados.</p>
+      <p>FOOTER.RIGHTS {{ yearNow }} JOSE MINELLI | CONNECTION: SECURE_SSL</p>
     </footer>
   </div>
 </template>
