@@ -1,31 +1,95 @@
 <script setup>
 import { ref, computed } from 'vue';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
+import { Bar } from 'vue-chartjs';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartOptions } from 'chart.js';
 import { skillsData } from '../data/portfolioData';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const activeCategory = ref('backend');
 
 const categories = [
-  { id: 'backend', label: 'Backend' },
-  { id: 'frontend', label: 'Frontend' },
-  { id: 'mobile', label: 'Mobile' },
-  { id: 'gamedev', label: 'Game Dev' },
-  { id: 'tools', label: 'Tools & DevOps' }
+  { id: 'backend', label: 'Backend', color: '#4afbd6' },
+  { id: 'frontend', label: 'Frontend', color: '#17b890' },
+  { id: 'mobile', label: 'Mobile', color: '#00d4ff' },
+  { id: 'gamedev', label: 'Game Dev', color: '#ff6b9d' },
+  { id: 'tools', label: 'Tools & DevOps', color: '#ffd700' }
 ];
 
 const currentSkills = computed(() => {
   return skillsData[activeCategory.value] || [];
 });
 
-const colors = {
-  backend: '#4afbd6',
-  frontend: '#17b890',
-  mobile: '#00d4ff',
-  gamedev: '#ff6b9d',
-  tools: '#ffd700'
+const chartData = computed(() => {
+  const skills = currentSkills.value;
+  const color = categories.find(c => c.id === activeCategory.value)?.color || '#4afbd6';
+
+  return {
+    labels: skills.map(s => s.name),
+    datasets: [
+      {
+        label: 'Proficiência',
+        data: skills.map(s => s.proficiency),
+        backgroundColor: color + '40',
+        borderColor: color,
+        borderWidth: 2,
+        borderRadius: 6,
+        tension: 0.4
+      }
+    ]
+  };
+});
+
+const chartOptions = {
+  responsive: true,
+  maintainAspectRatio: true,
+  plugins: {
+    legend: {
+      display: false
+    },
+    tooltip: {
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+      padding: 12,
+      titleFont: { size: 14, weight: 'bold' },
+      bodyFont: { size: 13 },
+      borderColor: '#4afbd6',
+      borderWidth: 1,
+      callbacks: {
+        label: function(context) {
+          return context.parsed.y + '%';
+        }
+      }
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      max: 100,
+      ticks: {
+        color: '#8ca39c',
+        font: { family: "'Space Mono', monospace" }
+      },
+      grid: {
+        color: 'rgba(74, 251, 214, 0.1)',
+        drawBorder: false
+      }
+    },
+    x: {
+      ticks: {
+        color: '#8ca39c',
+        font: { family: "'Space Mono', monospace", size: 12 }
+      },
+      grid: {
+        display: false,
+        drawBorder: false
+      }
+    }
+  }
 };
 
-const getCurrentColor = computed(() => colors[activeCategory.value]);
+const getCurrentColor = computed(() => {
+  return categories.find(c => c.id === activeCategory.value)?.color || '#4afbd6';
+});
 </script>
 
 <template>
@@ -41,35 +105,18 @@ const getCurrentColor = computed(() => colors[activeCategory.value]);
         :key="cat.id"
         :class="['category-btn', { active: activeCategory === cat.id }]"
         @click="activeCategory = cat.id"
+        :style="{ '--btn-color': cat.color }"
       >
         {{ cat.label }}
       </button>
     </div>
 
-    <div class="skills-visualization">
-      <div class="skills-bars">
-        <div
-          v-for="skill in currentSkills"
-          :key="skill.name"
-          class="skill-item"
-          :data-aos="`fade-right`"
-          :data-aos-delay="`${currentSkills.indexOf(skill) * 50}`"
-        >
-          <div class="skill-header">
-            <span class="skill-name">{{ skill.name }}</span>
-            <span class="skill-level">{{ skill.proficiency }}%</span>
-          </div>
-          <div class="skill-bar">
-            <div
-              class="skill-fill"
-              :style="{
-                width: skill.proficiency + '%',
-                backgroundColor: getCurrentColor
-              }"
-            />
-          </div>
-        </div>
-      </div>
+    <div class="skills-chart-container">
+      <Bar
+        :data="chartData"
+        :options="chartOptions"
+        class="skills-chart"
+      />
     </div>
 
     <div class="skills-stats">
@@ -123,6 +170,7 @@ const getCurrentColor = computed(() => colors[activeCategory.value]);
 }
 
 .category-btn {
+  --btn-color: #4afbd6;
   padding: 0.7rem 1.4rem;
   border: 1px solid rgba(74, 251, 214, 0.2);
   border-radius: 8px;
@@ -138,66 +186,31 @@ const getCurrentColor = computed(() => colors[activeCategory.value]);
 }
 
 .category-btn:hover {
-  border-color: rgba(74, 251, 214, 0.35);
-  color: var(--accent);
+  border-color: var(--btn-color);
+  color: var(--btn-color);
 }
 
 .category-btn.active {
-  background: rgba(74, 251, 214, 0.1);
-  border-color: rgba(74, 251, 214, 0.5);
-  color: var(--accent);
-  box-shadow: 0 0 20px rgba(74, 251, 214, 0.2);
+  background: color-mix(in rgb, var(--btn-color) 15%, transparent);
+  border-color: var(--btn-color);
+  color: var(--btn-color);
+  box-shadow: 0 0 20px color-mix(in rgb, var(--btn-color) 20%, transparent);
 }
 
-.skills-visualization {
-  padding: 1.5rem;
+.skills-chart-container {
+  padding: 2rem;
   border: 1px solid rgba(74, 251, 214, 0.15);
   border-radius: 12px;
   background: rgba(10, 16, 15, 0.3);
-}
-
-.skills-bars {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.skill-item {
-  display: grid;
-  gap: 0.6rem;
-}
-
-.skill-header {
+  min-height: 400px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 }
 
-.skill-name {
-  font-size: 0.95rem;
-  color: var(--text);
-  font-weight: 600;
-}
-
-.skill-level {
-  font-size: 0.8rem;
-  color: var(--accent);
-  font-family: var(--mono);
-  font-weight: 700;
-}
-
-.skill-bar {
-  height: 8px;
-  background: rgba(74, 251, 214, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid rgba(74, 251, 214, 0.15);
-}
-
-.skill-fill {
-  height: 100%;
-  border-radius: 4px;
-  transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 0 10px currentColor;
+.skills-chart {
+  width: 100%;
+  max-height: 400px;
 }
 
 .skills-stats {
@@ -248,8 +261,9 @@ const getCurrentColor = computed(() => colors[activeCategory.value]);
     font-size: 0.75rem;
   }
 
-  .skills-bars {
-    gap: 1.2rem;
+  .skills-chart-container {
+    padding: 1.5rem;
+    min-height: 300px;
   }
 
   .stat-card {
