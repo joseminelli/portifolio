@@ -127,11 +127,11 @@ const getCurrentColor = computed(() => {
     <div class="skills-stats">
       <div class="stat-card">
         <p class="stat-label">Tecnologias Dominadas</p>
-        <p class="stat-value">50+</p>
+        <p class="stat-value">30+</p>
       </div>
       <div class="stat-card">
         <p class="stat-label">Anos de Experiência</p>
-        <p class="stat-value">3+</p>
+        <p class="stat-value">2+</p>
       </div>
       <div class="stat-card">
         <p class="stat-label">Linguagens</p>
