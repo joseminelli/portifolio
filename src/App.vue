@@ -1,5 +1,7 @@
 <script setup>
 import { computed, onMounted, ref } from "vue";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import ContactPanel from "./components/ContactPanel.vue";
 import ProjectGrid from "./components/ProjectGrid.vue";
 import TimelineSection from "./components/TimelineSection.vue";
@@ -33,8 +35,24 @@ const toggleTheme = () => {
   document.documentElement.setAttribute("data-theme", theme.value);
 };
 
+const handleScroll = () => {
+  const scrolled = window.scrollY;
+  const bgNoise = document.querySelector(".bg-noise");
+  if (bgNoise) {
+    bgNoise.style.transform = `translateY(${scrolled * 0.5}px)`;
+  }
+};
+
 onMounted(() => {
   document.documentElement.setAttribute("data-theme", theme.value);
+  AOS.init({
+    duration: 800,
+    easing: "ease-out-cubic",
+    once: false,
+    offset: 100,
+    delay: 0
+  });
+  window.addEventListener("scroll", handleScroll);
   requestAnimationFrame(() => {
     appReady.value = true;
   });
@@ -47,7 +65,7 @@ onMounted(() => {
     <div class="bg-scanline"></div>
 
     <main id="content" class="main-grid">
-      <section class="hero-card reveal-item">
+      <section class="hero-card reveal-item" data-aos="fade-up" data-aos-delay="100">
         <p class="module-tag">READY // FULL STACK DEVELOPER ACTIVE | ID_001.SYS</p>
         <div class="hero-main-line">
           <img :src="profileSrc" alt="Jose Minelli" class="avatar" />
@@ -64,7 +82,7 @@ onMounted(() => {
         </p>
       </section>
 
-      <section class="about-card reveal-item">
+      <section class="about-card reveal-item" data-aos="fade-up" data-aos-delay="200">
         <p class="module-tag">SYSTEM_ARCHIVE // ABOUT</p>
         <h2>Sobre mim</h2>
         <div class="about-content">
@@ -75,7 +93,7 @@ onMounted(() => {
         <p class="meta">LOCAL_NODE: {{ hero.location }}</p>
       </section>
 
-      <section class="workspace-panel reveal-item">
+      <section class="workspace-panel reveal-item" data-aos="fade-up" data-aos-delay="300">
         <p class="module-tag workspace-tag">SYSTEM_TERMINAL // CONTENT</p>
         <nav class="tabs" aria-label="Navegacao de conteudo">
           <button :class="{ active: activeTab === 'projects' }" @click="activeTab = 'projects'" type="button">

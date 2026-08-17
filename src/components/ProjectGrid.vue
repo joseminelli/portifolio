@@ -19,7 +19,13 @@ defineProps({
 
 <template>
   <section class="projects-grid">
-    <article v-for="(project, index) in items" :key="project.title" class="project-card reveal-item">
+    <article
+      v-for="(project, index) in items"
+      :key="project.title"
+      class="project-card reveal-item"
+      data-aos="zoom-in-up"
+      :data-aos-delay="index * 100"
+    >
       <img :src="resolveImage(project.image)" :alt="project.title" class="project-media" />
       <div class="project-body">
         <p class="project-id">PRJ_0{{ index + 1 }}</p>

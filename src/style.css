@@ -43,6 +43,7 @@ body {
     radial-gradient(circle at 50% 95%, rgba(41, 164, 128, 0.28), transparent 34%),
     radial-gradient(circle at 10% 0%, rgba(74, 251, 214, 0.09), transparent 25%),
     linear-gradient(128deg, var(--bg), var(--bg-soft));
+  background-attachment: fixed;
 }
 
 .app-shell {
@@ -202,6 +203,13 @@ body {
   transition: var(--transition);
 }
 
+.hero-card:hover,
+.about-card:hover,
+.workspace-panel:hover {
+  border-color: rgba(74, 251, 214, 0.3);
+  box-shadow: 0 28px 90px rgba(74, 251, 214, 0.15), inset 0 0 32px rgba(74, 251, 214, 0.05);
+}
+
 .hero-card::after,
 .about-card::after,
 .workspace-panel::after {
@@ -235,6 +243,17 @@ body {
   color: var(--accent);
   margin: 0 0 1rem;
   text-transform: uppercase;
+  animation: tagGlow 3s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(74, 251, 214, 0.5);
+}
+
+@keyframes tagGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(74, 251, 214, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(74, 251, 214, 0.8);
+  }
 }
 
 .workspace-tag {
@@ -257,12 +276,14 @@ body {
   filter: contrast(1.08) saturate(0.95) brightness(0.96);
   transition: var(--transition);
   box-shadow: 0 0 20px rgba(74, 251, 214, 0.12);
+  animation: float 3s ease-in-out infinite;
 }
 
 .hero-main-line:hover .avatar {
   filter: contrast(1.12) saturate(1) brightness(1);
   border-color: rgba(74, 251, 214, 0.4);
   box-shadow: 0 0 30px rgba(74, 251, 214, 0.18);
+  animation: glowPulse 2s ease-in-out infinite;
 }
 
 .eyebrow {
@@ -294,6 +315,18 @@ h1 {
   font-weight: 900;
   text-transform: uppercase;
   color: #f3f5f4;
+  animation: slideInTitle 0.8s ease-out 0.3s backwards;
+}
+
+@keyframes slideInTitle {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .hero-highlight {
@@ -447,6 +480,31 @@ h2 {
 .tabs button.active::before {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.tabs button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(74, 251, 214, 0.3), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.tabs button:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }
 
 .projects-grid {
@@ -605,6 +663,15 @@ h2 {
   opacity: 1;
 }
 
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
 .timeline-block h2 {
   margin: 0 0 1.6rem;
   font-size: 1.8rem;
@@ -711,6 +778,33 @@ h2 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(74, 251, 214, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(74, 251, 214, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
   }
 }
 

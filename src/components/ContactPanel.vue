@@ -22,13 +22,15 @@ const getIconLabel = (icon) => {
 
     <div class="social-grid">
       <a
-        v-for="social in socialLinks"
+        v-for="(social, index) in socialLinks"
         :key="social.name"
         :href="social.url"
         target="_blank"
         rel="noreferrer"
         class="social-link"
         :title="`Visite meu ${social.name}`"
+        :data-aos="`fade-up`"
+        :data-aos-delay="`${index * 100}`"
       >
         <div class="social-icon" :style="{ '--social-color': social.color }">
           <svg

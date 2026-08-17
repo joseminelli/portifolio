@@ -33,7 +33,13 @@ if (initialExpandedIndex.value !== -1) {
     <h2>Experiência</h2>
 
     <div class="experiences-grid">
-      <div v-for="(item, index) in experiences" :key="item.title" class="experience-card">
+      <div
+        v-for="(item, index) in experiences"
+        :key="item.title"
+        class="experience-card"
+        data-aos="fade-up"
+        :data-aos-delay="index * 150"
+      >
         <div class="experience-header" @click="toggleExperience(index)">
           <div class="header-left">
             <p class="timeline-period">{{ item.period }}</p>
