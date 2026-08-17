@@ -40,52 +40,57 @@ const chartData = computed(() => {
   };
 });
 
-const chartOptions = {
-  responsive: true,
-  maintainAspectRatio: true,
-  plugins: {
-    legend: {
-      display: false
+const chartOptions = computed(() => {
+  const isMobile = window.innerWidth < 768;
+  const isSmallMobile = window.innerWidth < 480;
+
+  return {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: {
+        display: false
+      },
+      tooltip: {
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        padding: isMobile ? 8 : 12,
+        titleFont: { size: isMobile ? 12 : 14, weight: 'bold' },
+        bodyFont: { size: isMobile ? 11 : 13 },
+        borderColor: '#4afbd6',
+        borderWidth: 1,
+        callbacks: {
+          label: function(context) {
+            return context.parsed.y + '%';
+          }
+        }
+      }
     },
-    tooltip: {
-      backgroundColor: 'rgba(0, 0, 0, 0.8)',
-      padding: 12,
-      titleFont: { size: 14, weight: 'bold' },
-      bodyFont: { size: 13 },
-      borderColor: '#4afbd6',
-      borderWidth: 1,
-      callbacks: {
-        label: function(context) {
-          return context.parsed.y + '%';
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100,
+        ticks: {
+          color: '#8ca39c',
+          font: { family: "'Space Mono', monospace", size: isSmallMobile ? 10 : isMobile ? 11 : 12 }
+        },
+        grid: {
+          color: 'rgba(74, 251, 214, 0.1)',
+          drawBorder: false
+        }
+      },
+      x: {
+        ticks: {
+          color: '#8ca39c',
+          font: { family: "'Space Mono', monospace", size: isSmallMobile ? 9 : isMobile ? 10 : 12 }
+        },
+        grid: {
+          display: false,
+          drawBorder: false
         }
       }
     }
-  },
-  scales: {
-    y: {
-      beginAtZero: true,
-      max: 100,
-      ticks: {
-        color: '#8ca39c',
-        font: { family: "'Space Mono', monospace" }
-      },
-      grid: {
-        color: 'rgba(74, 251, 214, 0.1)',
-        drawBorder: false
-      }
-    },
-    x: {
-      ticks: {
-        color: '#8ca39c',
-        font: { family: "'Space Mono', monospace", size: 12 }
-      },
-      grid: {
-        display: false,
-        drawBorder: false
-      }
-    }
-  }
-};
+  };
+});
 
 const getCurrentColor = computed(() => {
   return categories.find(c => c.id === activeCategory.value)?.color || '#4afbd6';
@@ -251,27 +256,115 @@ const getCurrentColor = computed(() => {
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .skills-categories {
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 
   .category-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.75rem;
+    padding: 0.65rem 1.2rem;
+    font-size: 0.8rem;
   }
 
   .skills-chart-container {
-    padding: 1.5rem;
-    min-height: 300px;
+    padding: 1.8rem;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    gap: 1.5rem;
+  }
+
+  .skills-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .skills-header p {
+    font-size: 0.95rem;
+  }
+
+  .skills-categories {
+    gap: 0.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-btn {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.7rem;
+    text-align: center;
+  }
+
+  .skills-chart-container {
+    padding: 1.2rem;
+    min-height: 280px;
+  }
+
+  .skills-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
   }
 
   .stat-card {
-    padding: 1rem;
+    padding: 0.9rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
   }
 
   .stat-value {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    gap: 1.2rem;
+  }
+
+  .skills-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .skills-header p {
+    font-size: 0.9rem;
+  }
+
+  .skills-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .category-btn {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.65rem;
+    width: 100%;
+  }
+
+  .skills-chart-container {
+    padding: 1rem;
+    min-height: 240px;
+  }
+
+  .skills-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .stat-card {
+    padding: 0.8rem 0.6rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
   }
 }
 </style>

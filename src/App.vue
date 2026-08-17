@@ -94,8 +94,6 @@ onMounted(() => {
         <p class="meta">LOCAL_NODE: {{ hero.location }}</p>
       </section>
 
-      <SkillsVisualization />
-
       <section class="workspace-panel reveal-item" data-aos="fade-up" data-aos-delay="300">
         <p class="module-tag workspace-tag">SYSTEM_TERMINAL // CONTENT</p>
         <nav class="tabs" aria-label="Navegacao de conteudo">
@@ -116,6 +114,8 @@ onMounted(() => {
           <ContactPanel v-else key="contact" />
         </transition>
       </section>
+
+      <SkillsVisualization />
     </main>
 
     <footer class="site-footer">

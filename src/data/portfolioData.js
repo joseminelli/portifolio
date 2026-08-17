@@ -160,22 +160,21 @@ export const stack = [
 
 export const skillsData = {
   backend: [
-    { name: "C# / .NET", proficiency: 90 },
-    { name: "PHP", proficiency: 85 },
+    { name: "C# / .NET", proficiency: 80 },
+    { name: "PHP", proficiency: 65 },
     { name: "Node.js", proficiency: 80 },
-    { name: "Python", proficiency: 75 },
-    { name: "REST APIs", proficiency: 90 }
+    { name: "Python", proficiency: 60 },
+    { name: "REST APIs", proficiency: 75 }
   ],
   frontend: [
     { name: "Vue.js", proficiency: 90 },
     { name: "TypeScript", proficiency: 85 },
-    { name: "Angular", proficiency: 80 },
-    { name: "Next.js", proficiency: 80 },
+    { name: "Angular", proficiency: 65 },
+    { name: "Next.js", proficiency: 70 },
     { name: "Responsive Design", proficiency: 90 }
   ],
   mobile: [
     { name: "Flutter", proficiency: 85 },
-    { name: "React Native", proficiency: 70 },
     { name: "Mobile UX", proficiency: 85 }
   ],
   gamedev: [
@@ -187,7 +186,7 @@ export const skillsData = {
   tools: [
     { name: "Docker", proficiency: 85 },
     { name: "Git", proficiency: 95 },
-    { name: "SQL", proficiency: 90 },
+    { name: "SQL", proficiency: 80 },
     { name: "PostgreSQL", proficiency: 85 },
     { name: "Oracle", proficiency: 80 }
   ]
