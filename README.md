@@ -1,36 +1,41 @@
-# Portfólio
+# Portfolio em Vue
 
-Bem-vindo ao meu portfólio, onde compartilho alguns dos projetos em que trabalhei. Este portfólio foi desenvolvido com as seguintes tecnologias:
+Portfolio pessoal reimaginado com Vue 3 + Vite, com foco em estrutura, manutencao e design mais moderno.
 
-- HTML
-- CSS
-- JavaScript
+## Stack
 
-## Descrição do Projeto
+- Vue 3
+- Vite
+- gh-pages
 
-Este portfólio é uma representação do meu trabalho e das minhas habilidades como desenvolvedor. Ele contém uma variedade de projetos que abrangem desde sites totalmente funcionais até jogos.
+## Rodando localmente
 
-## Capturas de Tela
+1. Instale as dependencias:
 
-<div align="center" >
-  
- <img src="assets/images/Screenshot.png" alt="Captura de Tela 1" style="width: 80%">
-</div>
+```bash
+npm install
+```
 
-## 🎨 Color Reference
+2. Inicie o ambiente de desenvolvimento:
 
-| Color          | Hex                                                                |
-| -------------- | ------------------------------------------------------------------ |
-| Roxo - light mode          | ![#6751a4](https://via.placeholder.com/10/6751a4?text=+) `#6751a4 `|
-| Roxo - dark mode          | ![#381e71](https://via.placeholder.com/10/381e71?text=+) `#381e71 `|
-| Preto - dark bg     | ![#131217](https://via.placeholder.com/10/131217?text=+) `#131217 `|
-| Branco - light bg | ![#fef5ff](https://via.placeholder.com/10/fef5ff?text=+) `#fef5ff` |
-| Cinza - details      | ![#938f99](https://via.placeholder.com/10/938f99?text=+) `#938f99` |
+```bash
+npm run dev
+```
 
-## Considerações
+3. Gere build de producao:
 
-- Todos os projetos exibidos são de minha autoria
-- O portifólio foi feito em cima de um modelo já existente.
+```bash
+npm run build
+```
 
-## Acesse já
-Confira o site deste portfólio em https://joseminelli.github.io/portifolio/
+## Deploy no GitHub Pages
+
+O comando abaixo faz o build e publica automaticamente a pasta dist na branch gh-pages:
+
+```bash
+npm run deploy
+```
+
+## Observacao importante
+
+O base path do Vite esta configurado como /portifolio/ em [vite.config.js](vite.config.js). Se o nome do repositorio no GitHub for diferente, ajuste esse valor antes de publicar.
